@@ -7,8 +7,15 @@ A simple playground where i put some resources about what i have been learn at r
 ```bash
 $ npm i --global expo-cli 
 $ expo init <project-name>
-$ npm i styled-components --save # at project folder
+$ npm i # at project folder
 ```
+
+*With flake nix*
+```bash
+$ 
+```
+
+<tr>
 
 *Running application emulator* 
 ```bash
