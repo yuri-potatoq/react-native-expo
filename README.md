@@ -12,7 +12,7 @@ $ npm i # at project folder
 
 *With flake nix*
 ```bash
-$ nix develop
+$ nix develop && npm i
 ```
 
 <tr>
