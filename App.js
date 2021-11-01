@@ -13,7 +13,7 @@ const Header = styled.View`
   flex-direction: row;
   background-color: #DDD;
   justify-content: center;
-  height: 500px;
+  height: 150px;
   align-items: center;
   flex-wrap: wrap;
 `;
@@ -32,12 +32,22 @@ const App = () => {
           style={{
               width: 150, 
               height: 150, 
-              background: '#AAA'
-            }}
-
+              background: '#AAA'              
+            }}          
+          resizeMode="cover" 
         />
       </Quadrado>
-      <Quadrado cor="green"></Quadrado>
+      <Quadrado cor="green">
+        <Image 
+            source={{uri: 'https://www.google.com/google.jpg'}} 
+            style={{
+                width: 150, 
+                height: 150, 
+                background: '#AAA'              
+              }}          
+            resizeMode="stretch" 
+          />
+      </Quadrado>
       <Quadrado cor="blue"></Quadrado>
      </Header>
     </Pagina>
