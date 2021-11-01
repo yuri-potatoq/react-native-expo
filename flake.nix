@@ -17,7 +17,11 @@
           nodejs-14_x
           nodePackages.expo-cli
         ];
-      };
+
+        shellHook = ''
+          ${pkgs.nodejs}/bin/npm i
+        '';
+      };    
 
     };
 
