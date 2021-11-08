@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "react-p1",
-    "slug": "react-p1",
+    "name": "app02",
+    "slug": "app02",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

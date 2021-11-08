@@ -1,57 +1,37 @@
-import React, {useState} from "react";
-import { Image } from "react-native";
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
+import React, { useState } from 'react';
+import { Text, View } from 'react-native';
 
-
-const Quadrado = styled.View`
-  background-color: ${props => props.cor};
-  height: 150px;  
-  width: 150px;
-`;
-
-const Header = styled.View`
-  flex-direction: row;
-  background-color: #DDD;
-  justify-content: center;
-  height: 150px;
-  align-items: center;
-  flex-wrap: wrap;
-`;
-
-const Pagina = styled.View`
+const Pagina = styled.SafeAreView`
   flex: 1;
+  jsutify-content: center;
+  align-items: center;
 `;
+
+const Entrada = styled.TextInput`
+  width: 200p;
+  height: 40px;
+  border: 1px solid #000;
+`;
+
+const Hello = () => {
+  const [name, setName] = useState('TADS UEPA');
+
+  return (
+    <View>
+      <Entrada/>
+      <Text>Nome: {nome}</Text>
+    </View>
+  );
+};
 
 const App = () => {
-  return [   
-    <Pagina>  
-     <Header>
-      <Quadrado cor="red">
-        <Image 
-          source={require('./src/images/mine-sx.jpg')} 
-          style={{
-              width: 150, 
-              height: 150, 
-              background: '#AAA'              
-            }}          
-          resizeMode="cover" 
-        />
-      </Quadrado>
-      <Quadrado cor="green">
-        <Image 
-            source={{uri: 'https://www.google.com/google.jpg'}} 
-            style={{
-                width: 150, 
-                height: 150, 
-                background: '#AAA'              
-              }}          
-            resizeMode="stretch" 
-          />
-      </Quadrado>
-      <Quadrado cor="blue"></Quadrado>
-     </Header>
+  return (
+    <Pagina>
+      <Hello></Hello>
     </Pagina>
-  ];
+  );
 }
+
 
 export default App;
