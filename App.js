@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import React, { useState } from 'react';
 import { Text, View } from 'react-native';
 
-const Pagina = styled.SafeAreView`
+const Pagina = styled.SafeAreaView`
   flex: 1;
   jsutify-content: center;
   align-items: center;
@@ -17,10 +17,14 @@ const Entrada = styled.TextInput`
 const Hello = () => {
   const [name, setName] = useState('TADS UEPA');
 
+  const changeText = (t) => {
+    setName(t);
+  };
+
   return (
     <View>
-      <Entrada/>
-      <Text>Nome: {nome}</Text>
+      <Entrada value={name} onChangeText={changeText} />
+      <Text>Nome: {name}</Text>
     </View>
   );
 };
