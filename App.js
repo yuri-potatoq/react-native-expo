@@ -1,37 +1,33 @@
-import styled from 'styled-components/native';
 import React, { useState } from 'react';
-import { Text, View } from 'react-native';
-
-const Pagina = styled.SafeAreaView`
-  flex: 1;
-  jsutify-content: center;
-  align-items: center;
-`;
-
-const Entrada = styled.TextInput`
-  width: 200p;
-  height: 40px;
-  border: 1px solid #000;
-`;
-
-const Hello = () => {
-  const [name, setName] = useState('TADS UEPA');
-
-  return (
-    <View>
-      <Entrada value={name} onChangeText={ text => setName(text) } />
-      <Text>Nome: {name}</Text>
-    </View>
-  );
-};
+import { Text, View, StyleSheet, TextInput } from 'react-native';
 
 const App = () => {
   return (
-    <Pagina>
-      <Hello></Hello>
-    </Pagina>
+    <View style={sheet.container}>
+      { () => console.log("olá")() }
+      <Text style={sheet.title}>Calcule seu IMC</Text>
+      <TextInput style={sheet.input}/>
+    </View>    
   );
 }
 
+const sheet = StyleSheet.create({
+  container: {
+    flex: 1
+  },
+  title: {
+    textAlign: 'center',
+    marginTop: 25,
+    fontSize: 30,
+  },
+  input: {
+    backgroundColor: '#DDD',
+    borderRadius: 10,
+    margin: 15,
+    padding: 10,
+    color: '#000',
+    fontSize: 23,
+  },
+});
 
 export default App;
