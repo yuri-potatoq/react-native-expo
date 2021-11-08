@@ -17,13 +17,9 @@ const Entrada = styled.TextInput`
 const Hello = () => {
   const [name, setName] = useState('TADS UEPA');
 
-  const changeText = (t) => {
-    setName(t);
-  };
-
   return (
     <View>
-      <Entrada value={name} onChangeText={changeText} />
+      <Entrada value={name} onChangeText={ text => setName(text) } />
       <Text>Nome: {name}</Text>
     </View>
   );
