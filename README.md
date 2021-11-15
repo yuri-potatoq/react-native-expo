@@ -24,4 +24,9 @@ $ expo start
 $ npm start
 ```
 
+<br>
+
+**Pseudo rand image API**
+- https://picsum.photos/
+
 

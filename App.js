@@ -1,57 +1,36 @@
-import React, {useState} from "react";
-import { Image } from "react-native";
-import styled from "styled-components/native";
+import React, { useState } from 'react';
+import { View, Text } from 'react-native';
+import PhotoCard from './src/components/PhotoCard';
+import globalSheet from './src/styles/sheet';
 
 
-const Quadrado = styled.View`
-  background-color: ${props => props.cor};
-  height: 150px;  
-  width: 150px;
-`;
-
-const Header = styled.View`
-  flex-direction: row;
-  background-color: #DDD;
-  justify-content: center;
-  height: 150px;
-  align-items: center;
-  flex-wrap: wrap;
-`;
-
-const Pagina = styled.View`
-  flex: 1;
-`;
+const cardRowBuilder = (amount) => {
+    return [
+        <View style={globalSheet.row} >{
+            [...Array(amount)].map((_, i) =>  
+                <PhotoCard></PhotoCard>
+            )
+        }</View>
+    ];
+};
 
 const App = () => {
-  return [   
-    <Pagina>  
-     <Header>
-      <Quadrado cor="red">
-        <Image 
-          source={require('./src/images/mine-sx.jpg')} 
-          style={{
-              width: 150, 
-              height: 150, 
-              background: '#AAA'              
-            }}          
-          resizeMode="cover" 
-        />
-      </Quadrado>
-      <Quadrado cor="green">
-        <Image 
-            source={{uri: 'https://www.google.com/google.jpg'}} 
-            style={{
-                width: 150, 
-                height: 150, 
-                background: '#AAA'              
-              }}          
-            resizeMode="stretch" 
-          />
-      </Quadrado>
-      <Quadrado cor="blue"></Quadrado>
-     </Header>
-    </Pagina>
-  ];
-}
+    let owner = "potatoq";
+
+    return (
+        <View style={{ maxWidth: 450 }, globalSheet.container}>
+            <Text style={globalSheet.title}>Galeria de imagens do {owner} </Text>
+            <Text style={globalSheet.subtitle}>Pseud-rand images from picsum.photos</Text>
+            
+            {cardRowBuilder(3)}
+            {cardRowBuilder(3)}
+
+            <View style={globalSheet.container}>
+                <PhotoCard size={{width: 450, height: 150}} ></PhotoCard>
+            </View>            
+        </View>
+    );
+};
+
 
 export default App;
