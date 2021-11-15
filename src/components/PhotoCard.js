@@ -5,8 +5,6 @@ import { View, Image } from 'react-native';
 const PhotoCard = (props) => {
     let {width = 150, height = 150} = {...props.size};
 
-    console.log(` test ${height} ${width}`)
-    
     let uri = `https://picsum.photos/seed/${Math.random().toFixed(2)}/${width}/${height}?random=4&blur=1`;
 
     return (
@@ -16,6 +14,7 @@ const PhotoCard = (props) => {
                 width: width, 
                 height: height, 
                 padding: 4,
+                margin: 4,
                 background: '#AAA'              
             }}
             resizeMode="cover" 

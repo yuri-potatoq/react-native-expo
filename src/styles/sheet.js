@@ -3,19 +3,21 @@ import { StyleSheet} from 'react-native';
 
 const globalSheet = StyleSheet.create({
     container:{
-        flex:1,
+        flex: 1,
         backgroundColor: "#fff",
-        justifyContent: 'flex-start',
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 2,
     },
     title:{
         textAlign:'center',
-        marginTop: 15,
+        marginTop: 10,
         fontSize : 25,
         color: "#7289da"
     },
     subtitle:{
         textAlign:'center',
-        marginTop: 5,
+        margin: 5,
         fontSize : 15,
         color: "#B1D4E0",
         shadowColor: "#00000"
@@ -27,14 +29,7 @@ const globalSheet = StyleSheet.create({
     },
     card: {
         padding: 3,
-    },
-    input:{
-        backgroundColor:'#DDD',
-        borderRadius:10,
-        margin:15,
-        padding:10,
-        color:'#000',
-        fontSize:23
+        margin: 5,
     },
 });
 

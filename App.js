@@ -16,18 +16,16 @@ const cardRowBuilder = (amount) => {
 
 const App = () => {
     let owner = "potatoq";
-
+    let rowSize = 3;
     return (
-        <View style={{ maxWidth: 450 }, globalSheet.container}>
+        <View style={{ maxWidth: 1000, flex: rowSize }, globalSheet.container}>
             <Text style={globalSheet.title}>Galeria de imagens do {owner} </Text>
             <Text style={globalSheet.subtitle}>Pseud-rand images from picsum.photos</Text>
             
-            {cardRowBuilder(3)}
-            {cardRowBuilder(3)}
+            {cardRowBuilder(rowSize)}
+            {cardRowBuilder(rowSize)}
 
-            <View style={globalSheet.container}>
-                <PhotoCard size={{width: 450, height: 150}} ></PhotoCard>
-            </View>            
+            <PhotoCard size={{width: 150 * rowSize}} ></PhotoCard>          
         </View>
     );
 };
